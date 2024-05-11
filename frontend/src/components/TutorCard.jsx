@@ -10,12 +10,12 @@ import { FaStar, FaRegHeart } from "react-icons/fa";
 const TutorCard = ({
   name,
   image,
-  review,
-  totalReviews,
+  review = 0,
+  totalReviews = 0,
   expertise,
   description,
-  cardPrice,
-  rate,
+  cardPrice = 0,
+  rate = 0,
 }) => {
   return (
     <Card className="bg-black text-white border border-primary w-[300px] h-[540px]">
