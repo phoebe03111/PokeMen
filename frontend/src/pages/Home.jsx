@@ -19,7 +19,7 @@ const Home = () => {
               duration: 1.5,
             }}
           >
-            right person
+            perfect sensei
           </motion.span>
         </h1>
       </motion.section>
@@ -29,7 +29,7 @@ const Home = () => {
         <div className="relative flex items-center w-full md:w-2/3">
           <Input
             placeholder="What do you want to learn?"
-            className="rounded-[30px] bg-gray-600 text-white pl-10 pr-4 py-6 text-base placeholder:text-white"
+            className="rounded-[30px] bg-gray-600 text-white pl-10 pr-4 py-6 text-base placeholder:text-white outline-none"
           />
           <CiSearch
             className="absolute right-3 top-1/2 transform -translate-y-1/2"
@@ -41,7 +41,7 @@ const Home = () => {
 
         <div className="bg-gray-400 w-full flex flex-wrap justify-center text-white rounded-[30px] p-6 shadow-custom">
           {searchCategories.map((category) => (
-            <div key={category} className="mr-4 font-semibold">
+            <div key={category} className="mr-6 font-semibold hover:scale-105 cursor-pointer">
               {category}
             </div>
           ))}
@@ -49,7 +49,7 @@ const Home = () => {
       </section>
 
       {/* Cards section */}
-      <section className="flex items-center flex-wrap gap-8 my-12">
+      <section className="flex items-center flex-wrap gap-8 my-20">
         {tutors.map((tutor, index) => (
           <TutorCard key={tutor.id + index} {...tutor} />
         ))}
