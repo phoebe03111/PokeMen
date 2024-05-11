@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../public/logo.png";
+import logo from "/logo.png";
 
 const Header = () => {
   return (
@@ -10,8 +10,12 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-4">
-        <Link to="/become-a-tutor">Become a Tutor</Link>
-        <Link to="/login">Log In</Link>
+        <Link to="/become-a-tutor" className="md:text-xl">
+          Become a Tutor
+        </Link>
+        <Link to="/login" className="md:text-xl">
+          Log In
+        </Link>
       </div>
     </header>
   );
