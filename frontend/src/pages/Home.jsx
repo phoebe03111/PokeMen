@@ -25,7 +25,7 @@ const Home = () => {
       </motion.section>
 
       {/* Search section */}
-      <section className="container mx-auto flex flex-col items-center gap-12">
+      <section className="flex flex-col items-center gap-12">
         <div className="relative flex items-center w-full md:w-2/3">
           <Input
             placeholder="What do you want to learn?"
@@ -49,7 +49,7 @@ const Home = () => {
       </section>
 
       {/* Cards section */}
-      <section className="flex items-center flex-wrap gap-4 my-12">
+      <section className="flex items-center flex-wrap gap-8 my-12">
         {tutors.map((tutor, index) => (
           <TutorCard key={tutor.id + index} {...tutor} />
         ))}
