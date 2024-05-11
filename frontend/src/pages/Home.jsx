@@ -1,20 +1,12 @@
+import TutorCard from "@/components/TutorCard";
 import { Input } from "@/components/ui/input";
+import { searchCategories, tutors } from "@/constants";
 import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
 
-const searchCategories = [
-  "MATH100",
-  "Product Management",
-  "Badminton",
-  "Biology",
-  "Fitness",
-  "Marketing",
-  "Acedemic Consulting",
-];
-
 const Home = () => {
   return (
-    <main className="container mx-auto p-8">
+    <main className="container mx-auto p-12">
       {/* Hero section */}
       <motion.section className="h-[40vh] flex items-center justify-center">
         <h1 className="text-5xl font-bold flex flex-col gap-8 items-center capitalize text-primary">
@@ -33,7 +25,7 @@ const Home = () => {
       </motion.section>
 
       {/* Search section */}
-      <section className="container mx-auto p-8 flex flex-col items-center gap-12">
+      <section className="container mx-auto flex flex-col items-center gap-12">
         <div className="relative flex items-center w-full md:w-2/3">
           <Input
             placeholder="What do you want to learn?"
@@ -57,6 +49,11 @@ const Home = () => {
       </section>
 
       {/* Cards section */}
+      <section className="flex items-center flex-wrap gap-4 my-12">
+        {tutors.map((tutor, index) => (
+          <TutorCard key={tutor.id + index} {...tutor} />
+        ))}
+      </section>
     </main>
   );
 };
