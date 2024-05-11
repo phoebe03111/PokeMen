@@ -21,7 +21,11 @@ const TutorCard = ({
     <Card className="bg-black text-white border border-primary w-[300px] h-[540px]">
       <CardHeader>
         <div className="relative">
-          <img src={image} alt="tutor" className="rounded-2xl w-64 h-64 object-cover" />
+          <img
+            src={image}
+            alt="tutor"
+            className="rounded-2xl w-64 h-64 object-cover"
+          />
           <p className="text-white drop-shadow-md absolute bottom-3 left-4 z-10 font-bold text-2xl">
             {name}
           </p>

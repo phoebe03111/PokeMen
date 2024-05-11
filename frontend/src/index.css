@@ -10,11 +10,11 @@ body {
   background: linear-gradient(to bottom, #888888, #000000);
   color: #ffffff;
   font-family: "Inter", sans-serif;
+  min-height: 100vh;
 }
 
-
 @layer base {
-  :root {    
+  :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
