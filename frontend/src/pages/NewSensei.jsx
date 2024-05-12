@@ -39,7 +39,7 @@ const NewSensei = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-12 flex justify-center items-center h-[80vh] mb-20">
+    <div className="container mx-auto p-12 flex justify-center items-center mb-20">
       {loading ? (
         <RingLoader color="#FFF3CF" size={150} />
       ) : (
