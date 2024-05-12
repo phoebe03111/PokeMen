@@ -9,7 +9,7 @@ const Header = () => {
       <Link to="/">
         <div className="flex items-center gap-2">
           <img src={logo} alt="logo" width={40} />
-          <span className="font-bold text-2xl">Pokemon</span>
+          <span className="font-bold text-2xl">Pokemen</span>
         </div>
       </Link>
 
