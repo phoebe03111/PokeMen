@@ -6,8 +6,10 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { FaStar, FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const TutorCard = ({
+  id,
   name,
   image,
   review = 0,
@@ -17,8 +19,13 @@ const TutorCard = ({
   cardPrice = 0,
   rate = 0,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <Card className="bg-black text-white border border-primary w-[300px] h-[540px]">
+    <Card
+      className="bg-black text-white border border-primary w-[300px] h-[540px] cursor-pointer hover:scale-105"
+      onClick={() => navigate(`/sensei-profile/${id}`)}
+    >
       <CardHeader>
         <div className="relative">
           <img
