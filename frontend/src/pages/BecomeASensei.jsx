@@ -42,7 +42,7 @@ const BecomeASensei = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="flex flex-col md:flex-row gap-8 w-full">
+      <div className="flex flex-col lg:flex-row gap-8 w-full">
         {/* Left */}
         <div className="p-8 flex flex-col gap-8 w-full lg:w-1/2">
           <h1 className="text-5xl text-primary font-bold">Hey sensei!</h1>
