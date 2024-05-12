@@ -2,11 +2,43 @@ import ReviewCard from "@/components/ReviewCard";
 import TutorCard from "@/components/TutorCard";
 import { Button } from "@/components/ui/button";
 import { tutors } from "@/constants";
+import { loadStripe } from "@stripe/stripe-js";
 import { useParams } from "react-router-dom";
 
 const SenseiProfile = () => {
   const { senseiId } = useParams();
-  console.log(senseiId);
+
+  let stripePromise;
+  const getStripe = () =>
+    !stripePromise
+      ? loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
+      : stripePromise;
+
+  const videoCallPriceId = "price_1PFfCgAdG5quvx0UtW1gSE9x";
+  const cardPriceId = "price_1PFfC9AdG5quvx0U9lhqwHED";
+
+  const redirectToCheckout = async (priceId) => {
+    const stripe = await getStripe();
+
+    const checkoutOptions = {
+      lineItems: [
+        {
+          price: priceId,
+          quantity: 1,
+        },
+      ],
+      mode: "payment",
+      successUrl: `${window.location.origin}/success`,
+      cancelUrl: `${window.location.origin}/cancel`,
+    };
+
+    try {
+      const { error } = await stripe.redirectToCheckout(checkoutOptions);
+      console.log(error);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const data = tutors.find((tutor) => tutor.id == senseiId);
 
@@ -61,8 +93,12 @@ const SenseiProfile = () => {
           <TutorCard {...data} />
 
           <div className="flex flex-col gap-4">
-            <Button>Book a video call</Button>
-            <Button>Get card</Button>
+            <Button onClick={() => redirectToCheckout(videoCallPriceId)}>
+              Book a video call
+            </Button>
+            <Button onClick={() => redirectToCheckout(cardPriceId)}>
+              Get card
+            </Button>
             <Button>Message</Button>
           </div>
         </div>
