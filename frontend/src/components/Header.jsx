@@ -22,9 +22,11 @@ const Header = () => {
         >
           Become a Sensei
         </Link>
-        <Link to="/login" className="md:text-lg">
-          Log In
-        </Link>
+        <div className="hidden md:block">
+          <Link to="/" className="text-lg">
+            Log In
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -44,12 +44,14 @@ const BecomeASensei = () => {
     <div className="container mx-auto">
       <div className="flex flex-col lg:flex-row gap-8 w-full">
         {/* Left */}
-        <div className="p-8 flex flex-col gap-8 w-full lg:w-1/2">
+        <div className="p-8 flex flex-col justify-center text-center md:text-start gap-8 w-full lg:w-1/2">
           <h1 className="text-5xl text-primary font-bold">Hey sensei!</h1>
           <h2 className="text-5xl text-primary font-bold uppercase">
             We&apos;re turning you into a card!
           </h2>
-          <TutorCard {...tutorExample} />
+          <div className="flex justify-center items-center md:justify-start md:items-start">
+            <TutorCard {...tutorExample} />
+          </div>
         </div>
 
         {/* Right */}
@@ -103,9 +105,11 @@ const BecomeASensei = () => {
             />
           </div>
 
-          <Button onClick={handleGenerate} className="mt-4">
-            Generate <IoIosSend className="ml-2" size={20} />
-          </Button>
+          <div className="flex justify-center md:justify-start">
+            <Button onClick={handleGenerate} className="mt-4">
+              Generate <IoIosSend className="ml-2" size={20} />
+            </Button>
+          </div>
         </form>
       </div>
     </div>

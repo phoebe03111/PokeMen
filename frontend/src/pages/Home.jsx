@@ -5,11 +5,17 @@ import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
 
 const Home = () => {
+  let screenSize = window.innerWidth;
+
   return (
     <main className="container mx-auto p-12">
       {/* Hero section */}
       <motion.section className="h-[40vh] flex items-center justify-center">
-        <h1 className="text-5xl font-bold flex flex-col gap-8 items-center capitalize text-primary">
+        <h1
+          className={`${
+            screenSize < 678 ? "text-3xl" : "text-5xl"
+          } font-bold flex flex-col gap-8 items-center capitalize text-primary`}
+        >
           <span>Find the </span>
           <motion.span
             animate={{ opacity: 1, rotate: 360 }}
@@ -41,7 +47,10 @@ const Home = () => {
 
         <div className="bg-gray-400 w-full flex flex-wrap justify-center text-white rounded-[30px] p-6 shadow-custom">
           {searchCategories.map((category) => (
-            <div key={category} className="mr-6 font-semibold hover:scale-105 cursor-pointer">
+            <div
+              key={category}
+              className="mr-6 font-semibold hover:scale-105 cursor-pointer"
+            >
               {category}
             </div>
           ))}
@@ -49,7 +58,7 @@ const Home = () => {
       </section>
 
       {/* Cards section */}
-      <section className="flex items-center flex-wrap gap-8 my-20">
+      <section className="flex items-center justify-center md:justify-start flex-wrap gap-8 my-20">
         {tutors.map((tutor, index) => (
           <TutorCard key={tutor.id + index} {...tutor} />
         ))}
